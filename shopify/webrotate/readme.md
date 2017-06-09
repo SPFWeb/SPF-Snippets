@@ -1,8 +1,8 @@
 ## WebRotate 360
 All of the things to do with WebRotate 360 will be put in here for future reference 
 
+## Throw this in to theme.liquid for Shopify to activavte the WebRotate360 plugin
 ```HTML
-  // Throw this in to theme.liquid for Shopify to activavte the WebRotate360 plugin
   
   {{ 'basic.css' | asset_url | stylesheet_tag }}
   
