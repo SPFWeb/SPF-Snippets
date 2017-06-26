@@ -1,0 +1,46 @@
+<!-- SPF customization - sidebar menu/filter - NOTE nav handle + collection hand must be same polo-s -->
+
+
+
+{% if current_tags.size %}
+{% assign current_tag = current_tags.first | handlezie %}
+{% else %}
+{% assign current_tag = false %}
+{% endif %}
+<div id="collection-filters">
+<h4>Product Type:<br>
+{% if current_tags.size %}
+{{ current_tags.first | replace: '-', ' ' | captilize }}
+{% endif %}
+</span>
+</h4>
+
+<!--radio button list -->
+
+
+<form action="" style="display:block">
+<ul id="collection-filters-list">
+{% for link in linklists[collection.handle].links %}
+  
+<input type="radio" onclick="window.location='{{ link.url }}';" />
+<a class="{% if current_tag == link.handle %}active{% endif %}" href="{{ link.url }}">
+{{ link.title }}
+</a>
+  <br>
+{% endfor %}
+{% if current_tags.size %}
+  
+  </form>
+
+
+<br>
+<a href="{{ collection.url }}">
+  
+  <h5>Clear Filtering</h5>
+</a>
+
+{% endif %}
+</ul>
+</div>
+
+<p>
