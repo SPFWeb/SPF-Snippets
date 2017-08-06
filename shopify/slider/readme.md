@@ -1,6 +1,35 @@
 ## SPF Slideshow
 Add   {{ 'jquery.flexslider-min.js' | asset_url | script_tag }}      to theme.liquid
 
+Add to theme index in required position :
+```
+<!-- Begin slider -->
+<div class="span12">
+  <div class="flexslider-container">
+    <div class="flexslider">
+      <ul class="slides">
+        {% for i in (1..10) %}
+          {% capture show_slide %}display_slide_{{ i }}{% endcapture %}
+          {% capture image %}slideshow_{{ i }}.jpg{% endcapture %}
+          {% capture link %}slide_{{ i }}_link{% endcapture %}
+          {% capture alt %}slide_{{ i }}_alt{% endcapture %}
+          {% if settings[show_slide] %}
+          <li>
+            <a href="{{ settings[link] }}">
+              <img src="{{ image | asset_url }}" alt="{{ settings[alt] | escape }}" />
+            </a>
+          </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+      <div class="flex-controls"></div>
+    </div>
+  </div>
+</div>
+<!-- End slider -->
+  
+```
+
 Add settings to settings_schema.json
 ```
 
