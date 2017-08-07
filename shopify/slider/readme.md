@@ -1,7 +1,7 @@
 ## SPF Slideshow
-Add   
+Add to theme.liquid
 ```
-{{ 'jquery.flexslider-min.js' | asset_url | script_tag }}      to theme.liquid
+{{ 'jquery.flexslider-min.js' | asset_url | script_tag }}      
 ```
 Add to theme index in required position :
 ```
