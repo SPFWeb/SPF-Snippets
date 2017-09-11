@@ -20,7 +20,10 @@
          
    
             <div id="tm-main" class="tm-main uk-section uk-section-default <?php if ( tribe_is_event() && is_single() ) : ?> spf-banner" style="background-image: url(<?php echo kdmfi_get_featured_image_src( 'featured-image-2', 'full' ); endif ?>);" uk-height-viewport="expand: true">
-			<?php endif ?>
+			
 
+<?php else : ?>
+<div id="tm-main" class="tm-main uk-section uk-section-default <?php if ( tribe_is_event() && is_single() ) : ?> spf-banner" style="background-image: url(wp-content/uploads/page-bg-1.jpg);<?php endif ?>" uk-height-viewport="expand: true">
+<?php endif; ?>
 
 <!-- End Purge -->
