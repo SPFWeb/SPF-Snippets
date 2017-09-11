@@ -11,7 +11,8 @@
 <!-- End Purge -->
 
 // Updated Version 2
-                     
+// Use the code below for secondary image support
+// https://wordpress.org/plugins/multiple-featured-images/		   
 <!-- Purge if no work -->
 	
          <?php if ( tribe_is_event() && is_single() ) : ?><div class="spf-banner-overlay"></div><?php endif ?>
