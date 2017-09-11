@@ -9,3 +9,17 @@
 <?php endif; ?>
 
 <!-- End Purge -->
+
+// Updated Version 2
+                     
+<!-- Purge if no work -->
+	
+         <?php if ( tribe_is_event() && is_single() ) : ?><div class="spf-banner-overlay"></div><?php endif ?>
+    <?php if( kdmfi_has_featured_image( 'featured-image-2' ) ) : ?>
+         
+   
+            <div id="tm-main" class="tm-main uk-section uk-section-default <?php if ( tribe_is_event() && is_single() ) : ?> spf-banner" style="background-image: url(<?php echo kdmfi_get_featured_image_src( 'featured-image-2', 'full' ); endif ?>);" uk-height-viewport="expand: true">
+			<?php endif ?>
+
+
+<!-- End Purge -->
