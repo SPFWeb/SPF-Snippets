@@ -1,0 +1,28 @@
+<div class="container">
+ 
+  <div class="product-list row grid " data-normheights=".image" data-normheights-inner="img">
+    {% for link in linklists.brands.links %}
+{% assign collection = link.object %}
+   <div class="product-block flex column max-cols-4 min-cols-2">
+
+        <figure class="thumbnail">
+    <a href="{{ collection.url }}">
+      {% if collection.image %}
+        <img alt="{{ collection.image.alt | escape }}" src="{{ collection | img_url: 'grande' }}">
+      {% else %}
+        <img alt="{{ collection.title | escape }}" src="{{ collection.products.first | img_url: 'grande' }}">
+      {% endif %}
+    </a>
+  </figure>
+   
+
+  <h2 class="collection-title">
+    <a href="{{ collection.url }}">{{ collection.title }}</a>
+  </h2>
+  
+  </div>
+  
+
+      {% endfor %}
+  </div>
+</div>
