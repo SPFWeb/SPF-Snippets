@@ -1,0 +1,32 @@
+<!-- Begin slider -->
+<div class="span12">
+  <div class="flexslider-container">
+    <div class="flexslider">
+      <ul class="slides">
+        {% for i in (1..10) %}
+          {% capture show_slide %}display_slide_{{ i }}{% endcapture %}
+          {% capture image %}slideshow_{{ i }}.jpg{% endcapture %}
+          {% capture link %}slide_{{ i }}_link{% endcapture %}
+          {% capture image_picker %}slide_{{ i }}_image{% endcapture %}
+          {% capture alt %}slide_{{ i }}_alt{% endcapture %}
+          {% if settings[show_slide] %}
+          <li>
+            
+              <img src="{{ image | asset_url }}" alt="{{ settings[alt] | escape }}" />
+           <!-- <div class="shop-center-image">
+              <img src="{{ settings[slide_image] }}" class="shop-image" />
+            </div> -->
+             <a href="{{ settings[slide_link] }}">
+          <div class="shop-center">
+    <div class="shop-button">SHOP NOW</div>
+</div>
+    </a>
+          </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+      <div class="flex-controls"></div>
+    </div>
+  </div>
+</div>
+<!-- End slider -->
