@@ -1,3 +1,7 @@
+# Image Optimizer: https://wordpress.org/plugins/optimus/
+# Site Optimizer: https://wordpress.org/plugins/autoptimize/
+# Cache Enabler: https://wordpress.org/plugins/cache-enabler/
+# Wordpress CDN Enabler: https://wordpress.org/plugins/cdn-enabler/
 
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
