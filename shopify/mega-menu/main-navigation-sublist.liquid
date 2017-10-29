@@ -1,0 +1,13 @@
+<div>
+   <ul class="uk-nav uk-navbar-dropdown-nav">
+      {% if list_title != blank %}
+        <li class="uk-parent"><a href="#">{{ list_title | escape }}</a></li>
+        {% assign list_title = '' %}
+      {% endif %}
+        {% for l in linklists[main-navigation-sublist].links %}
+          {% assign l_title = l.title %}
+          {% include 'has-drop-down' with l_title %}
+          <li class="uk-nav-sub {% if l.active %} uk-active{% endif %}"><a href="{{ l.url }}">{{ l.title }}</a></li>
+         {% endfor %}
+   </ul>
+ </div>
