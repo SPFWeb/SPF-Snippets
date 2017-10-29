@@ -1,8 +1,7 @@
-
                     <nav role="navigation" class="header__nav uk-navbar-transparent uk-navbar-container uk-margin uk-navbar-{{ section.settings.nav_alignment }}" uk-navbar>
                         <div class="uk-navbar-left">
         
-                            <ul class="uk-navbar-nav">
+                            <ul class="uk-navbar-nav uk-navbar-dropdown-nav">
                              {% for link in linklists[section.settings.menu_linklist].links %}
     
                                 {% assign has_drop_down = false %}
@@ -20,8 +19,7 @@
                                     <div class="uk-navbar-dropdown  {% if has_drop_down %}uk-navbar-{{ dropdown_style }}{% endif %}">
                                         <div class="uk-navbar-dropdown-grid uk-child-width-1-2" uk-grid>
 	  {% comment %} Full width dropdown {% endcomment %}
-          <div class="sub-nav{% if section.settings.nav_show_images %} has-img{% endif %}">
-            {% if section.settings.nav_show_images %}<div class="rep-img"></div>{% endif %}
+          
 
             {% if section.settings.nav_uber_list_1 != blank %}
               {% assign list_title = section.settings.nav_uber_list_1_title %}
@@ -39,7 +37,7 @@
               {% assign list_title = section.settings.nav_uber_list_4_title %}
               {% include 'main-navigation-sublist' with section.settings.nav_uber_list_4 %}
             {% endif %}
-          </div>
+          
         
     </div>
                                     </div>
