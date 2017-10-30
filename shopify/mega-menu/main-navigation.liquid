@@ -23,10 +23,8 @@
                               {% assign list_title = section.settings.nav_uber_list_2_title %}
                               {% include 'main-navigation-sublist' with section.settings.nav_uber_list_2 %}
                             {% endif %}
-                            {% if section.settings.nav_uber_list_3 != blank %}
-                              {% assign list_title = section.settings.nav_uber_list_3_title %}
-                              {% include 'main-navigation-sublist' with section.settings.nav_uber_list_3 %}
-                            {% endif %}
+
+
                     	</div>
                      </div>
                    
@@ -47,8 +45,37 @@
                               {% assign list_title = section.settings.nav_uber_list_3_title %}
                               {% include 'main-navigation-sublist' with section.settings.nav_uber_list_3 %}
                             {% endif %}
+
+
+
                     		</div>
                       </div>
+                   
+                                        {% comment %}4 Column dropdown (Justified) {% endcomment %}          
+                     {% elsif has_drop_down and dropdown_style == 'dropdown-boundary-4' %}  
+                       <div class="class="uk-navbar-dropdown" uk-drop="cls-drop: uk-navbar-dropdown; boundary: !nav; boundary-align: true; pos: bottom-justify; flip: x"">
+                          <div class="uk-navbar-dropdown-grid uk-child-width-1-4@m" uk-grid>
+                            {% if section.settings.nav_uber_list_1 != blank %}
+                              {% assign list_title = section.settings.nav_uber_list_1_title %}
+                              {% include 'main-navigation-sublist' with section.settings.nav_uber_list_1 %}
+                            {% endif %}
+                            {% if section.settings.nav_uber_list_2 != blank %}
+                              {% assign list_title = section.settings.nav_uber_list_2_title %}
+                              {% include 'main-navigation-sublist' with section.settings.nav_uber_list_2 %}
+                            {% endif %}
+                            {% if section.settings.nav_uber_list_3 != blank %}
+                              {% assign list_title = section.settings.nav_uber_list_3_title %}
+                              {% include 'main-navigation-sublist' with section.settings.nav_uber_list_3 %}
+                            {% endif %}
+                            {% if section.settings.nav_uber_list_4 != blank %}
+                              {% assign list_title = section.settings.nav_uber_list_4_title %}
+                              {% include 'main-navigation-sublist' with section.settings.nav_uber_list_4 %}
+                            {% endif %}
+
+
+                    		</div>
+                      </div>
+                               
                                    
                                   
                      </li>
