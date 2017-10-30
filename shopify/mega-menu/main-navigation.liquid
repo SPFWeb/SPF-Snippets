@@ -1,79 +1,62 @@
-                    <nav role="navigation" class="header__nav uk-navbar-transparent uk-navbar-container uk-margin uk-navbar-{{ section.settings.nav_alignment }}" uk-navbar>
-                        <div class="uk-navbar-left">
-        
-                            <ul class="uk-navbar-nav uk-navbar-dropdown-nav">
-                             {% for link in linklists[section.settings.menu_linklist].links %}
+<nav role="navigation" class="header__nav uk-navbar-transparent uk-navbar-container uk-margin uk-navbar-{{ section.settings.nav_alignment }}" uk-navbar>
+    <div class="uk-navbar-left">
+           <ul class="uk-navbar-nav uk-navbar-dropdown-nav">
+              {% for link in linklists[section.settings.menu_linklist].links %}
     
-                                {% assign has_drop_down = false %}
-                                {% assign link_title = link.title %}
-                                {% if link_title == section.settings.nav_uber_name %}
-                                    {% assign dropdown_style = section.settings.columns %}                        		
-                                    {% assign has_drop_down = true %}
+                 {% assign has_drop_down = false %}
+                 {% assign link_title = link.title %}
+                 {% if link_title == section.settings.nav_uber_name %}
+                   {% assign dropdown_style = section.settings.columns %}                        		
+                   {% assign has_drop_down = true %}
+                 {% endif %}
+                 {% comment %} 2 Column dropdown {% endcomment %}               
+                 <li>
+                   <a href="#">{{ link.title }} </a>
+                    {% if has_drop_down and dropdown_style == 'dropdown-width-2' %}
+                      <div class="uk-navbar-dropdown  {% if has_drop_down %}uk-navbar-{{ dropdown_style }}{% endif %}">
+                         <div class="uk-navbar-dropdown-grid uk-child-width-1-2" uk-grid>
+                            {% if section.settings.nav_uber_list_1 != blank %}
+                              {% assign list_title = section.settings.nav_uber_list_1_title %}
+                              {% include 'main-navigation-sublist' with section.settings.nav_uber_list_1 %}
                             {% endif %}
-                                
-                              <li>
-                                    <a href="#">{{ link.title }} </a>
-                                   {% if has_drop_down and dropdown_style == 'dropdown-width-2' %}
-                                    <div class="uk-navbar-dropdown  {% if has_drop_down %}uk-navbar-{{ dropdown_style }}{% endif %}">
-                                        <div class="uk-navbar-dropdown-grid uk-child-width-1-2" uk-grid>
-	  {% comment %} 2 Column dropdown {% endcomment %}
-          
-
-            {% if section.settings.nav_uber_list_1 != blank %}
-              {% assign list_title = section.settings.nav_uber_list_1_title %}
-              {% include 'main-navigation-sublist' with section.settings.nav_uber_list_1 %}
-            {% endif %}
-            {% if section.settings.nav_uber_list_2 != blank %}
-              {% assign list_title = section.settings.nav_uber_list_2_title %}
-              {% include 'main-navigation-sublist' with section.settings.nav_uber_list_2 %}
-            {% endif %}
-            {% if section.settings.nav_uber_list_3 != blank %}
-              {% assign list_title = section.settings.nav_uber_list_3_title %}
-              {% include 'main-navigation-sublist' with section.settings.nav_uber_list_3 %}
-            {% endif %}
-            {% if section.settings.nav_uber_list_4 != blank %}
-              {% assign list_title = section.settings.nav_uber_list_4_title %}
-              {% include 'main-navigation-sublist' with section.settings.nav_uber_list_4 %}
-            {% endif %}
-          
-        
-    </div>
-                                    </div>
+                            {% if section.settings.nav_uber_list_2 != blank %}
+                              {% assign list_title = section.settings.nav_uber_list_2_title %}
+                              {% include 'main-navigation-sublist' with section.settings.nav_uber_list_2 %}
+                            {% endif %}
+                            {% if section.settings.nav_uber_list_3 != blank %}
+                              {% assign list_title = section.settings.nav_uber_list_3_title %}
+                              {% include 'main-navigation-sublist' with section.settings.nav_uber_list_3 %}
+                            {% endif %}
+                    	</div>
+                     </div>
+                   
+                   
+                     {% comment %}Justified Column dropdown {% endcomment %}          
+                     {% elsif has_drop_down and dropdown_style == 'dropdown-boundary' %}  
+                       <div class="class="uk-navbar-dropdown" uk-drop="cls-drop: uk-navbar-dropdown; boundary: !nav; boundary-align: true; pos: bottom-justify; flip: x"">
+                          <div class="uk-navbar-dropdown-grid uk-child-width-1-3@m" uk-grid>
+                            {% if section.settings.nav_uber_list_1 != blank %}
+                              {% assign list_title = section.settings.nav_uber_list_1_title %}
+                              {% include 'main-navigation-sublist' with section.settings.nav_uber_list_1 %}
+                            {% endif %}
+                            {% if section.settings.nav_uber_list_2 != blank %}
+                              {% assign list_title = section.settings.nav_uber_list_2_title %}
+                              {% include 'main-navigation-sublist' with section.settings.nav_uber_list_2 %}
+                            {% endif %}
+                            {% if section.settings.nav_uber_list_3 != blank %}
+                              {% assign list_title = section.settings.nav_uber_list_3_title %}
+                              {% include 'main-navigation-sublist' with section.settings.nav_uber_list_3 %}
+                            {% endif %}
+                    		</div>
+                      </div>
+                                   
                                   
-                                {% elsif has_drop_down and dropdown_style == 'dropdown-width-3' %}
-                                
-                                    <div class="uk-navbar-dropdown  {% if has_drop_down %}uk-navbar-{{ dropdown_style }}{% endif %}">
-                                        <div class="uk-navbar-dropdown-grid uk-child-width-1-3" uk-grid>
-	  {% comment %} 3 Column dropdown {% endcomment %}
-          
-
-            {% if section.settings.nav_uber_list_1 != blank %}
-              {% assign list_title = section.settings.nav_uber_list_1_title %}
-              {% include 'main-navigation-sublist' with section.settings.nav_uber_list_1 %}
-            {% endif %}
-            {% if section.settings.nav_uber_list_2 != blank %}
-              {% assign list_title = section.settings.nav_uber_list_2_title %}
-              {% include 'main-navigation-sublist' with section.settings.nav_uber_list_2 %}
-            {% endif %}
-            {% if section.settings.nav_uber_list_3 != blank %}
-              {% assign list_title = section.settings.nav_uber_list_3_title %}
-              {% include 'main-navigation-sublist' with section.settings.nav_uber_list_3 %}
-            {% endif %}
-            {% if section.settings.nav_uber_list_4 != blank %}
-              {% assign list_title = section.settings.nav_uber_list_4_title %}
-              {% include 'main-navigation-sublist' with section.settings.nav_uber_list_4 %}
-            {% endif %}
-          
-        
-    </div>
-                                    </div>
-                                  
-                                  </li>
+                     </li>
                                      
                       
                            
-                           {% endif %}
+                    {% endif %}
                                     
                          
-                              {% endfor %}
-                               </nav>   
+                 {% endfor %}
+</nav>   
