@@ -1,7 +1,7 @@
 <div>
    <ul class="uk-nav uk-navbar-dropdown-nav">
       {% if list_title != blank %}
-        <li class="uk-parent"><a href="#">{{ list_title | escape }}</a></li>
+        <li class="uk-nav-header"><a href="#">{{ list_title | escape }}</a></li>
         {% assign list_title = '' %}
       {% endif %}
         {% for l in linklists[main-navigation-sublist].links %}
