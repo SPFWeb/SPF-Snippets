@@ -1,69 +1,4 @@
-<header data-section-id="{{ section.id }}" data-section-type="header-section" role="banner" class="header">
-  {% if template.name == 'index' %}
-    <h1 itemscope itemtype="http://schema.org/Organization">
-  {% else %}
-    <div class="h1" itemscope itemtype="http://schema.org/Organization">
-  {% endif %}
-  <a href="/" itemprop="url" class="header__logo">
-    <img src="{{ 'logo.svg' | asset_url }}" alt="{{ shop.name }}">
-  </a>
-  {% if template.name == 'index' %}
-    </h1>
-  {% else %}
-    </div>
-  {% endif %}
-
-  <button class="hamburger toggle-nav js-toggle-nav">
-    <span class="hamburger__box">
-      <span class="hamburger__inner"></span>
-    </span>
-  </button>
-
- {% unless section.settings.header_layout == 'mobile' %}
-    {% include 'main-navigation-test' %}
-    {% endunless %}
-
-  {% if shop.customer_accounts_enabled %}
-    <ul class="header__account-nav">
-      {% if customer %}
-        <li>
-          {% if customer.first_name != blank %}
-            {% capture first_name %}<a href="/account">{{ customer.first_name }}</a>{% endcapture %}
-            {{ 'layout.customer.logged_in_as_html' | t: first_name: first_name }}
-          {% else %}
-            <a href="/account">{{ 'layout.customer.account' | t }}</a>
-          {% endif %}
-        </li>
-        <li>
-          {{ 'layout.customer.log_out' | t | customer_logout_link }}
-        </li>
-      {% else %}
-        <li>
-          {{ 'layout.customer.log_in' | t | customer_login_link }}
-        </li>
-        <li>
-          {{ 'layout.customer.create_account' | t | customer_register_link }}
-        </li>
-      {% endif %}
-    </ul>
-  {% endif %}
-
-  <a class="header__cart" href="/cart">
-    {% include 'icon-cart' %}
-    {% if cart.item_count > 0 %}
-      {% assign cart_count = 0 %}
-      {% for item in cart.items %}
-        {% if item.product.tags contains 'hidden' %}
-        {% else %}
-          {% assign cart_count = cart_count | plus: item.quantity %}
-        {% endif %}
-      {% endfor %}
-      ({{ cart_count }})
-    {% endif %}
-  </a>
-
-</header>
-
+{% include 'main-navigation' %}
 {% schema %}
   {
     "name": "Header",
@@ -96,16 +31,16 @@
       },
       {
    "type":      "select",
-   "id":        "collumns",
+   "id":        "columns",
    "label":     "How you want the menus to display",
    "options": [
      {
-       "value": "uk-navbar-dropdown-width-2",
+       "value": "dropdown-width-2",
        "label": "2 Columns"
      },
      {
       
-       "value": "uk-navbar-dropdown-width-3",
+       "value": "dropdown-width-3",
        "label": "3 Columns"
      }, 
      {
@@ -114,7 +49,7 @@
        "label": "Justify"
      }
    ],
-   "default":   "uk-navbar-dropdown-width-2",
+   "default":   "dropdown-width-2",
    "info":      "2 Columns Default"
 },
       {
