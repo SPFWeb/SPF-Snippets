@@ -34,19 +34,34 @@
    "id":        "columns",
    "label":     "How you want the menus to display",
    "options": [
+	 {
+      
+       "value": "dropdown-1-with-image",
+       "label": "1 Column(With Image)"
+     },
      {
        "value": "dropdown-width-2",
        "label": "2 Columns"
      },
+ 	 {
+      
+       "value": "dropdown-2-with-image",
+       "label": "2 Columns(With Image)"
+     },
      {
       
        "value": "dropdown-boundary",
-       "label": "3 Columns(Justified)"
+       "label": "3 Columns"
+     },
+ 	 {
+      
+       "value": "dropdown-3-with-image",
+       "label": "3 Columns(With Image)"
      },
      {
       
        "value": "dropdown-boundary-4",
-       "label": "4 Columns(Justified)"
+       "label": "4 Columns"
      }
    ],
    "default":   "dropdown-width-2",
@@ -56,6 +71,12 @@
         "type": "checkbox",
         "id": "nav_show_images",
         "label": "Show collection images in dropdown navigation",
+        "info": "Works only on desktop."
+      },
+      {
+        "type": "image_picker",
+        "id": "nav_image",
+        "label": "Choose a featured image to show in the menu",
         "info": "Works only on desktop."
       },
       {
