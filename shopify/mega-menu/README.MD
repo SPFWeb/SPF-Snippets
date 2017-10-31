@@ -21,8 +21,8 @@ For the Mega Menu to work you will need to add the core files for UiKit, you can
 ### Installing
 
 1. Create a new snippet under the name of main-navigation.liquid and paste the raw code from here to it.
-2. Do the exact same for main-navigation-sublist.liquidand has_drop_down.liquid.
-3. Once all snippets have been added to your shopify store copy the header schma toyour header.liquid and include 'main-navigation'.
+2. Do the exact same for main-navigation-sublist.liquid and has_drop_down.liquid.
+3. Once all snippets have been added to your shopify store copy the header schema to your header.liquid and include 'main-navigation'.
 
 
 ## Built With
