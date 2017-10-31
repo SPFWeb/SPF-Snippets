@@ -1,4 +1,5 @@
-<nav role="navigation" class="uk-visible@l uk-navbar-transparent uk-navbar-container uk-margin uk-navbar-{{ section.settings.nav_alignment }}" uk-navbar>
+<div class="uk-container uk-margin">
+<nav role="navigation" class="uk-visible@m uk-navbar-transparent uk-navbar-container uk-margin uk-navbar-{{ section.settings.nav_alignment }}" uk-navbar>
     <div class="uk-navbar-left">
            <ul class="uk-navbar-nav uk-navbar-dropdown-nav">
               {% for link in linklists[section.settings.menu_linklist].links %}
@@ -13,7 +14,7 @@
                  
                  {% comment %} 2 Column dropdown {% endcomment %}               
                  <li>
-                   <a href="#">{{ link.title }} </a>
+                   <a href="#" {% if has_drop_down %}uk-icon="icon:chevron-down" {% endif %}>{{ link.title }} </a>
                     {% if has_drop_down and dropdown_style == 'dropdown-width-2' %}
                       <div class="uk-navbar-dropdown  {% if has_drop_down %}uk-navbar-{{ dropdown_style }}{% endif %}">
                          <div class="uk-navbar-dropdown-grid uk-child-width-1-2" uk-grid>
@@ -147,4 +148,5 @@
                                     
                          
                  {% endfor %}
-</nav>   
+</nav>
+  </div>
