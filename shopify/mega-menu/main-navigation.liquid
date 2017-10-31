@@ -1,4 +1,4 @@
-<div class="uk-container uk-margin">
+<div class="{% if section.settings.full-width %}uk-margin {% else %}uk-container uk-margin {% endif %}">
 <nav role="navigation" style="background: {{ section.settings.nav_color }};" class="uk-visible@m uk-navbar-container uk-margin uk-navbar-{{ section.settings.nav_alignment }}" uk-navbar>
     <div class="uk-navbar-left">
            <ul class="uk-navbar-nav uk-navbar-dropdown-nav">
