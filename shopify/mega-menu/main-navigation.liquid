@@ -1,5 +1,6 @@
+{% if section.settings.sticky %}<div uk-sticky="sel-target: cls-active: uk-navbar-sticky"> {% endif %}
 <div class="{% if section.settings.full-width %}uk-margin {% else %}uk-container uk-margin {% endif %}">
-<nav role="navigation" style="background: {{ section.settings.nav_color }};" class="uk-visible@m uk-navbar-container uk-margin uk-navbar-{{ section.settings.nav_alignment }}" uk-navbar>
+<nav style="background: {{ section.settings.nav_color }};" class="uk-visible@m uk-navbar-container uk-margin uk-navbar-{{ section.settings.nav_alignment }}" uk-navbar>
     <div class="uk-navbar-{{ section.settings.nav_alignment }}">
            <ul class="uk-navbar-nav uk-navbar-dropdown-nav">
               {% for link in linklists[section.settings.menu_linklist].links %}
@@ -32,7 +33,7 @@
                      </div>
                    {% comment %}1 Column dropdown (with image) {% endcomment %}          
                      {% elsif has_drop_down and dropdown_style == 'dropdown-1-with-image' %}  
-                       <div class="class="uk-navbar-dropdown" uk-drop="cls-drop: uk-navbar-dropdown; boundary: !nav; boundary-align: true; pos: bottom-justify; flip: x"">
+                       <div class="uk-navbar-dropdown" uk-drop="cls-drop: uk-navbar-dropdown; boundary: !nav; boundary-align: true; pos: bottom-justify; flip: x">
                           <div class="uk-navbar-dropdown-grid uk-child-width-1-2@m" uk-grid>
                             {% if section.settings.nav_uber_list_1 != blank %}
                               {% assign list_title = section.settings.nav_uber_list_1_title %}
@@ -47,7 +48,7 @@
                               
                                {% comment %}2 Column dropdown (with image) {% endcomment %}          
                      {% elsif has_drop_down and dropdown_style == 'dropdown-2-with-image' %}  
-                       <div class="class="uk-navbar-dropdown" uk-drop="cls-drop: uk-navbar-dropdown; boundary: !nav; boundary-align: true; pos: bottom-justify; flip: x"">
+                       <div class="uk-navbar-dropdown" uk-drop="cls-drop: uk-navbar-dropdown; boundary: !nav; boundary-align: true; pos: bottom-justify; flip: x">
                           <div class="uk-navbar-dropdown-grid uk-child-width-1-3@m" uk-grid>
                             {% if section.settings.nav_uber_list_1 != blank %}
                               {% assign list_title = section.settings.nav_uber_list_1_title %}
@@ -150,3 +151,5 @@
                  {% endfor %}
 </nav>
   </div>
+ {% if section.settings.sticky %} </div> {% endif %}
+  
