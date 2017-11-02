@@ -1,7 +1,4 @@
-{% if section.settings.sticky %}<div uk-sticky="sel-target: cls-active: uk-navbar-sticky"> {% endif %}
-<div class="{% if section.settings.full-width %}uk-margin {% else %}uk-container uk-margin {% endif %}">
-<nav style="background: {{ section.settings.nav_color }};" class="uk-visible@m uk-navbar-container uk-margin uk-navbar-{{ section.settings.nav_alignment }}" uk-navbar>
-    <a class="uk-navbar-item uk-logo" href="#">{% if section.settings.site_logo %}<img src="{{ section.settings.site_logo_img | img_url: 'x80' }}" /> {% else %} {{ shop.name }} {% endif %}</a>
+ <a class="uk-navbar-item uk-logo" href="#">{% if section.settings.site_logo %}<img src="{{ section.settings.site_logo_img | img_url: 'x80' }}" /> {% else %} {{ shop.name }} {% endif %}</a>
   <div class="uk-navbar-{{ section.settings.nav_alignment }}">
            <ul class="uk-navbar-nav uk-navbar-dropdown-nav">
               {% for link in linklists[section.settings.menu_linklist].links %}
@@ -161,7 +158,5 @@
           <li><a href="#" style=" color: {{ section.settings.nav_text_color }}" uk-icon="icon: search"></a></li>
                </ul>
              </div>
-</nav>
 
- {% if section.settings.sticky %} </div> {% endif %}
   
