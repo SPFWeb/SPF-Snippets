@@ -1,4 +1,10 @@
-{% include 'main-navigation' %}
+  {% if section.settings.sticky %}<div uk-sticky="sel-target: cls-active: uk-navbar-sticky"> {% endif %}
+<div class="{% if section.settings.full-width %}{% else %} uk-container{% endif %}">
+<nav style="background: {{ section.settings.nav_color }}; height: {{ section.settings.nav_height }};" class="uk-visible@m uk-navbar-container  {% if section.settings.remove-bottom %} uk-margin-remove-bottom {% elsif section.settings.remove-top %}uk-margin-remove-top{% else %}uk-margin {% endif %}  uk-navbar-{{ section.settings.nav_alignment }}" uk-navbar>
+          {% include 'main-navigation' %}
+  </nav>
+  </div>
+   {% if section.settings.sticky %}</div>{% endif %}
 {% schema %}
   {
     "name": "Header",
