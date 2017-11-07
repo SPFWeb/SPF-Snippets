@@ -13,11 +13,11 @@
         "type": "header",
         "content": "SPF Mega Menu Settings"
       },
- 	  {
+      {
         "type": "link_list",
         "id": "menu_linklist",
         "label": "Menu",
-		"default": "main-menu"
+	"default": "main-menu"
       },
       {
         "type": "checkbox",
@@ -51,7 +51,7 @@
         "label": "Nav Bar Text Color",
         "default": "#999"
       },
-      {
+	  {
         "type": "select",
         "id": "nav_alignment",
         "label": "Alignment",
@@ -68,38 +68,63 @@
         "default": "left"
       },
       {
-        "type":      "select",
-        "id":        "columns",
-        "label":     "How you want the menus to display",
-        "options": [
-	 {
-           "value": "dropdown-1-with-image",
-           "label": "1 Column(With Image)"
+        "type": "text",
+        "id": "nav_height",
+        "label": "Navigation Height (in pixels)"
       },
+      {
+   "type":      "select",
+   "id":        "columns",
+   "label":     "How you want the menus to display",
+   "options": [
+	 {
+      
+       "value": "dropdown-1-with-image",
+       "label": "1 Column(With Image)"
+     },
+	 {
+      
+       "value": "dropdown-1-with-image-hover",
+       "label": "1 Columns (With Image Hover)"
+     },
      {
        "value": "dropdown-width-2",
        "label": "2 Columns"
      },
-     {
+ 	 {
+      
        "value": "dropdown-2-with-image",
        "label": "2 Columns(With Image)"
      },
+	 {
+      
+       "value": "dropdown-2-with-image-hover",
+       "label": "2 Columns (With Image Hover)"
+     },
      {
+      
        "value": "dropdown-boundary",
        "label": "3 Columns"
      },
-     {
+ 	 {
+      
        "value": "dropdown-3-with-image",
        "label": "3 Columns(With Image)"
      },
+	 {
+      
+       "value": "dropdown-3-with-image-hover",
+       "label": "3 Columns (With Image Hover)"
+     },
      {
+      
        "value": "dropdown-boundary-4",
        "label": "4 Columns"
      }
    ],
    "default":   "dropdown-width-2",
    "info":      "2 Columns Default"
-   },
+},
       {
         "type": "checkbox",
         "id": "full-width",
