@@ -1,4 +1,5 @@
- <a class="uk-navbar-item uk-logo" href="#">{% if section.settings.site_logo %}<img src="{{ section.settings.site_logo_img | img_url: 'x80' }}" /> {% else %} {{ shop.name }} {% endif %}</a>
+
+    <a class="uk-navbar-item uk-logo" href="#">{% if section.settings.site_logo %}<img src="{{ section.settings.site_logo_img | img_url: 'x80' }}" /> {% else %} {{ shop.name }} {% endif %}</a>
   <div class="uk-navbar-{{ section.settings.nav_alignment }}">
            <ul class="uk-navbar-nav uk-navbar-dropdown-nav">
               {% for link in linklists[section.settings.menu_linklist].links %}
@@ -11,14 +12,15 @@
                  {% endif %}
              
                  
-                       
+                 {% comment %} 2 Column dropdown {% endcomment %}               
                  <li>
                    <a href="#" {% if has_drop_down %}uk-icon="icon:chevron-down" {% endif %} style=" color: {{ section.settings.nav_text_color }}">{{ link.title }} </a>
-                    
-                   {% comment %} 2 Column dropdown {% endcomment %}        
-                   {% if has_drop_down and dropdown_style == 'dropdown-width-2' %}
-                      <div class="uk-navbar-dropdown  {% if has_drop_down %}uk-navbar-{{ dropdown_style }}{% endif %}">
+                    {% if has_drop_down and dropdown_style == 'dropdown-width-2' %}
+                      <div class="uk-navbar-dropdown  {% if has_drop_down %} dropdown uk-navbar-{{ dropdown_style }}{% endif %}{% if section.settings.nav_show_images %} has-img{% endif %}">
+                        
+           
                          <div class="uk-navbar-dropdown-grid uk-child-width-1-2" uk-grid>
+                            
                             {% if section.settings.nav_uber_list_1 != blank %}
                               {% assign list_title = section.settings.nav_uber_list_1_title %}
                               {% include 'main-navigation-sublist' with section.settings.nav_uber_list_1 %}
@@ -45,6 +47,22 @@
 
                     		</div>
                       </div>
+                    {% comment %}1 Column dropdown (with image hover) {% endcomment %}          
+                     {% elsif has_drop_down and dropdown_style == 'dropdown-1-with-image-hover' %}  
+                       <div class="uk-navbar-dropdown" uk-drop="cls-drop: uk-navbar-dropdown; boundary: !nav; boundary-align: true; pos: bottom-justify; flip: x">
+                          <div class="sub-nav-new uk-navbar-dropdown-grid uk-child-width-1-3@m {% if section.settings.nav_show_images %} has-img{% endif %}" uk-grid>
+                           
+            
+                            {% if section.settings.nav_uber_list_1 != blank %}
+                              {% assign list_title = section.settings.nav_uber_list_1_title %}
+                              {% include 'main-navigation-sublist' with section.settings.nav_uber_list_1 %}
+                            {% endif %}
+                             {% if section.settings.nav_show_images %}<div class="rep-img"></div>{% endif %}
+                            
+							
+
+                    		</div>
+                      </div>
                               
                                {% comment %}2 Column dropdown (with image) {% endcomment %}          
                      {% elsif has_drop_down and dropdown_style == 'dropdown-2-with-image' %}  
@@ -65,6 +83,26 @@
                     		</div>
                       </div>
                    
+                        {% comment %}2 Column dropdown (with test) {% endcomment %}          
+                     {% elsif has_drop_down and dropdown_style == 'dropdown-2-with-image-hover' %}  
+                       <div class="uk-navbar-dropdown" uk-drop="cls-drop: uk-navbar-dropdown; boundary: !nav; boundary-align: true; pos: bottom-justify; flip: x">
+                          <div class="sub-nav-new uk-navbar-dropdown-grid uk-child-width-1-3@m {% if section.settings.nav_show_images %} has-img{% endif %}" uk-grid>
+                           
+            
+                            {% if section.settings.nav_uber_list_1 != blank %}
+                              {% assign list_title = section.settings.nav_uber_list_1_title %}
+                              {% include 'main-navigation-sublist' with section.settings.nav_uber_list_1 %}
+                            {% endif %}
+                            {% if section.settings.nav_uber_list_2 != blank %}
+                              {% assign list_title = section.settings.nav_uber_list_2_title %}
+                              {% include 'main-navigation-sublist' with section.settings.nav_uber_list_2 %}
+                            {% endif %}
+                             {% if section.settings.nav_show_images %}<div class="rep-img"></div>{% endif %}
+                            
+							
+
+                    		</div>
+                      </div>
                    
                      {% comment %}3 Column dropdown (Justified) {% endcomment %}          
                      {% elsif has_drop_down and dropdown_style == 'dropdown-boundary' %}  
@@ -107,6 +145,31 @@
                               {% include 'main-navigation-sublist' with section.settings.nav_uber_list_3 %}
                             {% endif %}
                              {% if section.settings.nav_show_images %}<div class="img"><img src="{{ section.settings.nav_image | img_url: 'large' }}" /> </div>{% endif %}
+                            
+							
+
+                    		</div>
+                      </div>
+                   
+                    {% comment %}3 Column dropdown (with image hover) {% endcomment %}          
+                     {% elsif has_drop_down and dropdown_style == 'dropdown-3-with-image-hover' %}  
+                       <div class="uk-navbar-dropdown" uk-drop="cls-drop: uk-navbar-dropdown; boundary: !nav; boundary-align: true; pos: bottom-justify; flip: x">
+                          <div class="sub-nav-new uk-navbar-dropdown-grid uk-child-width-1-4@m {% if section.settings.nav_show_images %} has-img{% endif %}" uk-grid>
+                           
+            
+                            {% if section.settings.nav_uber_list_1 != blank %}
+                              {% assign list_title = section.settings.nav_uber_list_1_title %}
+                              {% include 'main-navigation-sublist' with section.settings.nav_uber_list_1 %}
+                            {% endif %}
+                            {% if section.settings.nav_uber_list_2 != blank %}
+                              {% assign list_title = section.settings.nav_uber_list_2_title %}
+                              {% include 'main-navigation-sublist' with section.settings.nav_uber_list_2 %}
+                            {% endif %}
+                            {% if section.settings.nav_uber_list_3 != blank %}
+                              {% assign list_title = section.settings.nav_uber_list_3_title %}
+                              {% include 'main-navigation-sublist' with section.settings.nav_uber_list_3 %}
+                            {% endif %}
+                             {% if section.settings.nav_show_images %}<div class="rep-img"></div>{% endif %}
                             
 							
 
@@ -158,5 +221,7 @@
           <li><a href="#" style=" color: {{ section.settings.nav_text_color }}" uk-icon="icon: search"></a></li>
                </ul>
              </div>
+
+
 
   
