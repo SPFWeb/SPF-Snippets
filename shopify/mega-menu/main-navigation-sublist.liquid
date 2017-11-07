@@ -7,7 +7,11 @@
         {% for l in linklists[main-navigation-sublist].links %}
           {% assign l_title = l.title %}
           {% include 'has-drop-down' with l_title %}
-          <li class="uk-nav-sub {% if l.active %} uk-active{% endif %}"><a href="{{ l.url }}"> <span class="uk-margin-small-right" uk-icon="icon: table"></span> {{ l.title }}</a></li>
+          <li class="uk-nav-sub {% if l.active %} uk-active{% endif %}">
+            <a href="{{ l.url }}" class="sub-nav-item-link" {% if l.type == 'collection_link' %}{% if l.object.image %} data-img="{{ l.object.image | img_url: 'large' }}"{% else %} data-img="{{ l.object.products.first.featured_image | img_url: 'large' }}"{% endif %}{% endif %}{% if l.type == 'product_link' and l.object.featured_image %} data-img="{{ l.object.featured_image | img_url: 'large' }}"{% endif %}> 
+              <span class="uk-margin-small-right" uk-icon="icon: table"></span> {{ l.title }}
+            </a>
+     	 </li>
          {% endfor %}
    </ul>
  </div>
