@@ -1,0 +1,52 @@
+<!--
+  Simple Video Background Section for Shopify
+-->
+
+{%- if section.settings.show_videobg -%}
+<div class="video-overlay"></div>
+<div class="videoloop">
+             <div class="fullscreen-bg">
+    <video loop muted playsinline autoplay class="fullscreen-bg__video">
+        <source src="{{ section.settings.videomp4_text | escape }}" type="video/mp4">
+        <source src="{{ section.settings.videowebm_text | escape }}" type="video/webm">
+        <source src="{{ section.settings.videoogg_text | escape }}" type="video/ogg">
+    </video>
+    </div>
+    </div>
+
+
+{%- endif -%}
+
+
+
+{% schema %}
+{
+  "name": "Video Background",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_videobg",
+      "label": "Enable Video Background",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "videomp4_text",
+      "label": "Paste the Video URL here (MP4 Only)",
+      "default": "https://cdn.shopify.com/s/files/1/2118/3069/files/australia-loop.mp4?3282806034611657163"
+    },
+    {
+      "type": "text",
+      "id": "videowebm_text",
+      "label": "Paste the Video URL here (Webm Only)",
+      "default": "https://cdn.shopify.com/s/files/1/2118/3069/files/australia-loop.webm?3282806034611657163"
+    },
+    {
+      "type": "text",
+      "id": "videoogg_text",
+      "label": "Paste the Video URL here (Ogg Only)",
+      "default": "https://cdn.shopify.com/s/files/1/2118/3069/files/australia-loop.ogg?3282806034611657163"
+    }
+  ]
+}
+{% endschema %}
