@@ -1,0 +1,21 @@
+{% assign show_message = false %}
+{% for item in line_items %}
+    {% if item.title == 'Gift Card - $50.00' or item.title == 'Gift Card - $75.00' or item.title == 'Gift Card - $100.00' %}
+        {% assign show_message = true %}
+    {% endif %}
+{% endfor %}
+{% if show_message %}
+Message goes here
+{% endif %}
+
+
+{% assign show_message = false %}
+{% for item in line_items %}
+    {% if item.variant.option1 != 'I don't know my size' or item.title == 'Gift Card - $75.00' or item.title == 'Gift Card - $100.00' %}
+        {% assign show_message = true %}
+    {% endif %}
+{% endfor %}
+{% if show_message %}
+Message goes here
+{% endif %}
+
