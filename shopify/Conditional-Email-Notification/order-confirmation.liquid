@@ -11,11 +11,10 @@ Message goes here
 
 {% assign show_message = false %}
 {% for item in line_items %}
-    {% if item.variant.option1 != 'I don't know my size' or item.title == 'Gift Card - $75.00' or item.title == 'Gift Card - $100.00' %}
+{% if line.variant.title == 'I don't know my size' %}
         {% assign show_message = true %}
     {% endif %}
 {% endfor %}
 {% if show_message %}
 Message goes here
 {% endif %}
-
