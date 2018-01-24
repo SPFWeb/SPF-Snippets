@@ -1,20 +1,4 @@
-{% assign show_message = false %}
-{% for item in line_items %}
-    {% if item.title == 'Gift Card - $50.00' or item.title == 'Gift Card - $75.00' or item.title == 'Gift Card - $100.00' %}
-        {% assign show_message = true %}
-    {% endif %}
-{% endfor %}
-{% if show_message %}
-Message goes here
-{% endif %}
 
-
-{% assign show_message = false %}
-{% for item in line_items %}
-{% if line.variant.title == 'I don't know my size' %}
-        {% assign show_message = true %}
-    {% endif %}
+{% for line in line_items %}
+{% if line.variant.title == 'I dont know my size' %} test text {% endif %}
 {% endfor %}
-{% if show_message %}
-Message goes here
-{% endif %}
