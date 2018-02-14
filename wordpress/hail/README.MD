@@ -12,7 +12,6 @@ To get started all you need is a Wordpress install and the Hail.to Wordpress Con
 ```
  [hail_page pid="aKrywI"]
  [hail_hero pid="aKrywI"]
-
 ```
 
 ### Installing
