@@ -1,6 +1,6 @@
 # SPF Websites + Hail.to Wordpress Plugin Documentation
 
-The documentation that will help you display content on your worpress site using some shortcodes which have been provided in this plugin.
+The documentation that will help you display content on your Wordpress site using some shortcodes which have been provided in this plugin.
 
 ## Getting Started
 
@@ -11,8 +11,8 @@ To get started all you need is a Wordpress install and the Hail.to Wordpress Con
 
 ```
  [hail_content columns=2 display_hero=true orderby=date order=asc]
- [hail_page pid="aKrywI"]
- [hail_hero pid="aKrywI"]
+ [hail_page pid="aKrywI8"]
+ [hail_hero pid="aKrywI8"]
 ```
 
 ### Installing
