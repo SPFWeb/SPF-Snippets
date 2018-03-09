@@ -1,0 +1,121 @@
+             
+                 <p class="line-item-property__field lunchoption">
+  <label>Option List 1:</label><br>
+  <select required class="required" id="test" name="properties[Test Fruit]">
+    <option value="{ { section.settings.option1 }}"> { section.settings.option1 }}</option>
+ 
+  </select>
+            
+
+   {% schema %}
+  {
+    "name": "Product pages",
+    "settings": [
+      {
+        "type": "select",
+        "id": "image_size",
+        "label": "Image size",
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "medium",
+            "label": "Medium"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          },
+          {
+            "value": "full",
+            "label": "Full-width"
+          }
+        ],
+        "default": "medium"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_quantity_selector",
+        "label": "Show quantity selector",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_variant_labels",
+        "label": "Show variant labels",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_vendor",
+        "label": "Show vendor",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_zoom",
+        "label": "Enable image zoom",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_share_buttons",
+        "label": "Show social sharing buttons",
+        "default": true
+      },
+
+
+
+    {
+        "type": "header",
+        "content": "Lunch Options"
+      },
+
+{
+   "type":      "text",
+   "id":        "option11",
+   "label":     "Option1",
+   "default":   "Content Goes Here",
+   "info":      "Text",
+   "placeholder": "Text1"
+},
+
+
+
+      {
+        "type": "checkbox",
+        "id": "show_quantity_selector2",
+        "label": "Show quantity selector",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_variant_labels2",
+        "label": "Show variant labels",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_vendor2",
+        "label": "Show vendor",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_zoom2",
+        "label": "Enable image zoom",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_share_buttons2",
+        "label": "Show social sharing buttons",
+        "default": true
+      }
+
+]
+    
+  }
+{% endschema %}
