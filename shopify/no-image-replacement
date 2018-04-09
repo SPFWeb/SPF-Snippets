@@ -1,0 +1,32 @@
+  
+   <!-- product card -->
+         
+         
+         {% if product.images.size == 0 %} 
+  
+  <div class="product-card__image-wrapper">
+    <img src="https://cdn.shopify.com/s/files/1/2223/9981/files/product-image.jpg?11430107593177638026" alt="{{ product.featured_image.alt | escape }}" class="product-card__image">
+  </div>
+  
+  
+{% else %}
+  
+  <div class="product-card__image-wrapper">
+    <img src="{{ product.featured_image.src | img_url: '480x480' }}" alt="{{ product.featured_image.alt | escape }}" class="product-card__image">
+  </div>
+              
+              {% endif %}
+  
+  
+
+   <!-- product.liquid -->
+            
+            {% if product.images.size == 0 %} 
+    {{ 'product-image.jpg' | asset_url | img_tag }}
+{% else %}
+                   
+            <a href="{{ featured_image | img_url: '1024x1024' }}" class="js-modal-open-product-modal" id="ProductPhotoLink-{{ section.id }}">
+              <img src="{{ featured_image | img_url: product_image_size }}" alt="{{ featured_image.alt | escape }}" id="ProductPhotoImg-{{ section.id }}">
+              
+              {% endif %}
+              
