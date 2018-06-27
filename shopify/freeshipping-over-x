@@ -1,0 +1,9 @@
+<!-- free shipping statement -->
+                
+                {% if product.price > 25000 %} <img src="" height="38" width="250">
+            <br>
+            This product qualifies for free shipping!
+            <p>
+{% endif %}
+                
+                <!-- end -->
