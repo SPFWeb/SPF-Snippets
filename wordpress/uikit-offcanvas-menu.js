@@ -1,4 +1,4 @@
-// Off Canvas Menu overides to the defrault Wordpress Navigation Menu
+// Off Canvas Menu overides to the default Wordpress Navigation Menu Widget
 
 jQuery(function($){
 	$(document).ready(function(){
