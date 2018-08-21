@@ -42,7 +42,7 @@
               {% comment %} Block settings {% endcomment %}
              <div class="fullscreen-bg">
                       <video loop muted autoplay class="fullscreen-bg__video">
-        <source src="https://cdn.shopify.com/s/files/1/1835/6627/files/denheath2.webm" type="video/webm">
+        <source src="{% for blocks in section.block %}{{ section.block.settings.video_url }} {% endfor %}" type="video/webm">
     </video>
     </div>
     </div>
