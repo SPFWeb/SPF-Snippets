@@ -1,0 +1,12 @@
+<!-- hide product if no image - above grid__item -->
+    		 {% if product.images.size == 0 %} 
+{% assign displayProduct = false %}
+      {% else %}
+    <!-- end -->
+
+	<div class="grid__item grid-product {{
+
+  <!-- place at end of file product-grid-item.liquid -->
+    
+      {% endif %}
+        <!--spf end statement -->
