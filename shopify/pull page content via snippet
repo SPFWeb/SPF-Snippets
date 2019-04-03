@@ -1,0 +1,4 @@
+<!-- place in snippet and include in required place -->
+
+	<h3>{{ pages.description.title }}</h3>
+{{ pages.description.content }}
