@@ -1,0 +1,6 @@
+{% assign page_handle = 'artist-' | append:product.vendor | handle %}
+{% if pages[page_handle].content != blank %}
+  {{ pages[page_handle].content }}
+{% else %}
+ There is no artist information for this artwork
+{% endif %}
