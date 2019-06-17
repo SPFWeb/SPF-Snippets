@@ -1,0 +1,4 @@
+<!-- wholesale account -->
+ {% if customer.tags contains 'wholesale' or content_for_header contains 'adminBarInjector' %}
+ 
+ {% endif %} 
