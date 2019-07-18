@@ -1,8 +1,0 @@
-{% if product.variants.first.inventory_quantity <= 0 %}
-<p style="color:#ff0000">This item is currently out of stock.
-Order today, and your item will be shipped in 2 weeks.</p>
-{% case product.variants.first.inventory_quantity %}
-{% when '0' %}
-{% else %}
-{% endcase %}
-{% endif %}
