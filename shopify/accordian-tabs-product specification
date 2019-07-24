@@ -1,0 +1,26 @@
+
+<div class="wrapper">
+<div class="tab"><input id="tab-1" type="checkbox" name="tabs" /> <label for="tab-1">Product Specs</label>
+<div class="tab-content">
+{% include 'spec-page' %}
+</div>
+</div>
+  
+  <div class="tab"><input id="tab-2" type="checkbox" name="tabs" /> <label for="tab-2">Care Instructions</label>
+<div class="tab-content">
+<p>test</p>
+</div>
+</div>
+  
+</div>
+
+
+Spec Page :
+
+
+{% assign page_handle = 'spec-' | append:product.title | handle %}
+{% if pages[page_handle].content != blank %}
+  {{ pages[page_handle].content }}
+{% else %}
+There is no product specification for this product
+{% endif %}
