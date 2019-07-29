@@ -1,0 +1,17 @@
+<label class="caption"> <p class="uk-form-label uk-margin-bottom-remove"> Your Name (required)</p> 
+    [text* your-name class:uk-input] </label>
+
+<label class="caption"> <p class="uk-form-label uk-margin-bottom-remove"> Email (required)</p> 
+    [email* your-email class:uk-input] </label>
+
+<label class="caption"> <p class="uk-form-label uk-margin-bottom-remove"> Phone</p> 
+    [tel your-phone class:uk-input] </label>
+
+<label class="caption"> <p class="uk-form-label uk-margin-bottom-remove"> Subject</p> 
+    [text your-subject class:uk-input] </label>
+
+<label class="caption"> <p class="uk-form-label uk-margin-bottom-remove"> Your Message</p> 
+    [textarea your-message class:uk-textarea rows:5] </label>
+
+<br>
+[submit class:uk-button class:uk-button-default class:uk-button-large "Send Message"]
