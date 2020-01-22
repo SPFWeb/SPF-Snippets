@@ -1,0 +1,12 @@
+<div id="variant-inventory">
+ {% if product.variants.first.inventory_management == "shopify" %}
+    {% if product.variants.first.inventory_quantity > 0 %}
+       We currently have {{ product.variants.first.inventory_quantity }} in stock.
+    {% else %}
+       The product is out of stock
+    {% endif %}
+ {% else %}
+    This product is available
+ {% endif %}
+</div>
+      
