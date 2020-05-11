@@ -1,0 +1,12 @@
+{% if note != '' %} 
+Note: {{ note }}
+{% endif %}
+ <td class="order-number__cell">
+                      <span class="order-number__text">
+{% if note != '' %} 
+Purchase Order #{{ note }}
+{% else%}
+                        Order {{ order_name }}
+{% endif %}
+      </span>
+      </td>
