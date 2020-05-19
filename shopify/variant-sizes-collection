@@ -1,0 +1,12 @@
+{% assign sizes = '' %}
+{% for variant in product.variants %}
+  {% if variant.available %}
+    {% assign sizes = sizes | append: variant.options[1] | append: '_' %}
+  {% endif %}
+{% endfor %}
+      
+{% assign sizesArr = sizes | split: '_' | uniq %}
+    Size:  
+{% for size in sizesArr %}  
+  <span>{{ size }}</span>
+{% endfor %}
