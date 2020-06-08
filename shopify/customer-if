@@ -1,0 +1,5 @@
+{% if customer %}
+  This customer is logged in.
+{% else %}
+  This customer is not logged in.
+{% endif %}
