@@ -1,0 +1,1 @@
+  or 4 payments of $ {{ product.price | divided_by: 4 | money }} with <img src="https://cdn.shopify.com/s/files/1/0507/4635/9994/files/afterpay-badge-726f8f6d.png?v=1608586393" width="100px">
