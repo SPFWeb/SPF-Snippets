@@ -1,0 +1,7 @@
+{% for item in cart.items %}
+	{% if item.product.type == 'Product Type' %}
+		{% if forloop.first %}
+		//message goes here
+		{% endif %}
+	{% endif %}
+{% endfor %}
