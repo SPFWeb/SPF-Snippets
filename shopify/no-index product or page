@@ -1,0 +1,4 @@
+<!-- noindex this page if the template contains "no-index" in the name -->
+  {% if template.suffix contains 'noindex' %}
+  <meta name = "robots" content = "noindex">
+  {% endif %}
