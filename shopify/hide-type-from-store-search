@@ -1,0 +1,6 @@
+
+{% for item in search.results %}
+{% if item.object_type == 'product' and item.available == true %}
+...
+{% endif %}
+{% endfor %}
