@@ -1,4 +1,4 @@
-{% if product.vendor == 'Hugi' and product.title contains 'Marble' %}
+{% if product.vendor == 'Vendorname' and product.title contains 'producttitle' %}
   
   <h3>Marble Options</h3>
   <div>
