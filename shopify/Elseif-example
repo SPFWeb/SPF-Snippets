@@ -1,0 +1,20 @@
+{% if product.vendor == 'Hugi' and product.title contains 'Marble' %}
+  
+  <h3>Marble Options</h3>
+  <div>
+  The Hugi ramp basin range can be customised in a number of marble look solid surface finishes. Price on request, please request a quote.
+  <br>
+  <img src="https://cdn.shopify.com/s/files/1/0033/2192/1651/files/Marble_colour_chart_for_web_1.png?v=1632374419">
+  </div>
+  
+  {% elsif product.vendor == 'Hugi' %}
+  
+  <h3>Colour Options</h3>
+  <div>
+  The Hugi range can be customised in 15 different colours. Price on request, please request a quote
+  <br>
+  <img src="https://cdn.shopify.com/s/files/1/0033/2192/1651/files/Small_colours-01_5cd27875-3f37-4bcb-bd4e-66b1153a8acb.jpg?v=1618962076">
+  </div>
+  
+  {% else %}
+  {% endif %}
