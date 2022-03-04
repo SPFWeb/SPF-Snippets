@@ -1,0 +1,14 @@
+{% for line in line_items %}
+{% if line.product.vendor == 'Wholesale' and shipping_address.country == 'New Zealand' %}
+<span>NZ</span><br />
+{% else %}
+{% endif %}
+{% endfor %}
+
+
+{% for line in line_items %}
+{% if line.product.vendor == 'Wholesale' and shipping_address.country == 'Australia' %}
+<span>AU</span><br />
+{% else %}
+{% endif %}
+{% endfor %}
